@@ -16,4 +16,10 @@ module.exports = {
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
   },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
+  }
 };

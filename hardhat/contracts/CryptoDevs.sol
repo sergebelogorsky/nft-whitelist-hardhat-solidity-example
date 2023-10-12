@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.16;
+pragma solidity ^0.8.21;
 
-import "~/../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "./Whitelist.sol";
 
 contract CryptoDevs is ERC721Enumerable, Ownable {
@@ -25,6 +25,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
      * Constructor for Crypto Devs takes in the baseURI to set _baseTokenURI for the collection.
      * It also initializes an instance of whitelist interface.
      */
+
     constructor(address whitelistContract) ERC721("Crypto Devs", "CD") {
         whitelist = Whitelist(whitelistContract);
         reservedTokens = whitelist.maxWhitelistedAddresses();
