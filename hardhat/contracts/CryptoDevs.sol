@@ -26,7 +26,9 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
      * It also initializes an instance of whitelist interface.
      */
 
-    constructor(address whitelistContract) ERC721("Crypto Devs", "CD") {
+    constructor(
+        address whitelistContract
+    ) Ownable(msg.sender) ERC721("Crypto Devs", "CD") {
         whitelist = Whitelist(whitelistContract);
         reservedTokens = whitelist.maxWhitelistedAddresses();
     }
